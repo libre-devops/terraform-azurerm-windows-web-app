@@ -44,7 +44,7 @@ module "web_app" {
       http2_enabled       = true
 
       application_stack = {
-        python_version = 3.9
+        python_version = "3.4.0"
       }
     }
 
