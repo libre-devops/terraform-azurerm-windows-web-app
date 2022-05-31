@@ -54,7 +54,6 @@ module "web_app" {
   }
 }
 ```
-
 ## Requirements
 
 No requirements.
