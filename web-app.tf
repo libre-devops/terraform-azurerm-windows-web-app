@@ -142,16 +142,15 @@ resource "azurerm_windows_web_app" "web_app" {
       dynamic "application_stack" {
         for_each = lookup(var.settings.site_config, "application_stack", {}) != {} ? [1] : []
         content {
-          java_version        = lookup(var.settings.site_config.application_stack, "java_version", null)
-          java_server         = lookup(var.settings.site_config.application_stack, "java_server", null)
-          java_server_version = lookup(var.settings.site_config.application_stack, "java_server_version", null)
-          php_version         = lookup(var.settings.site_config.application_stack, "php_version", null)
-          ruby_version        = lookup(var.settings.site_config.application_stack, "ruby_version", null)
-          dotnet_version      = lookup(var.settings.site_config.application_stack, "dotnet_version", null)
-          node_version        = lookup(var.settings.site_config.application_stack, "node_version", null)
-          python_version      = lookup(var.settings.site_config.application_stack, "python_version", null)
-          docker_image        = lookup(var.settings.site_config.application_stack, "docker_image", null)
-          docker_image_tag    = lookup(var.settings.site_config.application_stack, "docker_image_tag", null)
+          current_stack             = lookup(var.settings.site_config.application_stack, "current_stack", null)
+          java_version              = lookup(var.settings.site_config.application_stack, "java_version", null)
+          php_version               = lookup(var.settings.site_config.application_stack, "php_version", null)
+          dotnet_version            = lookup(var.settings.site_config.application_stack, "dotnet_version", null)
+          node_version              = lookup(var.settings.site_config.application_stack, "node_version", null)
+          python_version            = lookup(var.settings.site_config.application_stack, "python_version", null)
+          docker_container_name     = lookup(var.settings.site_config.application_stack, "docker_container_name", null)
+          docker_container_registry = lookup(var.settings.site_config.application_stack, "docker_container_registry", null)
+          docker_container_tag      = lookup(var.settings.site_config.application_stack, "docker_container_tag", null)
         }
       }
 
