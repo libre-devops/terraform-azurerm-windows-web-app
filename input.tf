@@ -139,3 +139,9 @@ variable "web_app_vnet_integration_subnet_id" {
   type        = string
   default     = null
 }
+
+variable "zip_deploy_file" {
+  description = "A zip file, containing your source code to be deployed via terraform"
+  type        = string
+  default     = null
+}

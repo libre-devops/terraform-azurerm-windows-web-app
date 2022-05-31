@@ -47,6 +47,7 @@ No modules.
 | <a name="input_tags"></a> [tags](#input\_tags) | A map of the tags to use on the resources that are deployed with this module. | `map(string)` | <pre>{<br>  "source": "terraform"<br>}</pre> | no |
 | <a name="input_web_app_vnet_integration_enabled"></a> [web\_app\_vnet\_integration\_enabled](#input\_web\_app\_vnet\_integration\_enabled) | Enable VNET integration with the Function App. `web_app_vnet_integration_subnet_id` is mandatory if enabled | `bool` | `false` | no |
 | <a name="input_web_app_vnet_integration_subnet_id"></a> [web\_app\_vnet\_integration\_subnet\_id](#input\_web\_app\_vnet\_integration\_subnet\_id) | ID of the subnet to associate with the Function App (VNet integration) | `string` | `null` | no |
+| <a name="input_zip_deploy_file"></a> [zip\_deploy\_file](#input\_zip\_deploy\_file) | A zip file, containing your source code to be deployed via terraform | `string` | `null` | no |
 
 ## Outputs
 
