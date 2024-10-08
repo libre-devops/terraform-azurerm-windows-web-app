@@ -404,8 +404,8 @@ resource "azurerm_windows_web_app" "web_app" {
           dynamic "action" {
             for_each = auto_heal_setting.value.action != null ? [auto_heal_setting.value.action] : []
             content {
-              action_type                     = action.value.action_type
-              minimum_process_execution_time  = action.value.minimum_process_execution_time
+              action_type                    = action.value.action_type
+              minimum_process_execution_time = action.value.minimum_process_execution_time
 
               dynamic "custom_action" {
                 for_each = action.value.custom_action != null ? [action.value.custom_action] : []
@@ -452,12 +452,12 @@ resource "azurerm_windows_web_app" "web_app" {
               dynamic "status_code" {
                 for_each = trigger.value.status_code != null ? trigger.value.status_code : []
                 content {
-                  count              = status_code.value.count
-                  interval           = status_code.value.interval
-                  status_code_range  = status_code.value.status_code_range
-                  path               = status_code.value.path
-                  sub_status         = status_code.value.sub_status
-                  win32_status_code  = status_code.value.win32_status_code
+                  count             = status_code.value.count
+                  interval          = status_code.value.interval
+                  status_code_range = status_code.value.status_code_range
+                  path              = status_code.value.path
+                  sub_status        = status_code.value.sub_status
+                  win32_status_code = status_code.value.win32_status_code
                 }
               }
             }

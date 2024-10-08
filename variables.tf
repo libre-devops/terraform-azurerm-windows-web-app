@@ -244,7 +244,7 @@ variable "windows_web_apps" {
       default_documents                             = optional(list(string))
       auto_heal_setting = optional(object({
         action = optional(object({
-          action_type = optional(string)
+          action_type                    = optional(string)
           minimum_process_execution_time = optional(string)
           custom_action = optional(object({
             executable = optional(string)
@@ -254,26 +254,26 @@ variable "windows_web_apps" {
         trigger = optional(object({
           private_memory_kb = optional(number)
           slow_request_with_path = optional(list(object({
-            count = optional(string)
+            count      = optional(string)
             time_taken = optional(string)
-            path = optional(string)
-            interval = optional(string)
+            path       = optional(string)
+            interval   = optional(string)
           })))
           requests = optional(object({
-            count = optional(string)
+            count    = optional(string)
             interval = optional(string)
           }))
           slow_request = optional(object({
-            count = optional(string)
-            interval = optional(string)
+            count      = optional(string)
+            interval   = optional(string)
             time_taken = optional(string)
           }))
           status_code = optional(list(object({
-            count = optional(string)
-            interval = optional(string)
+            count             = optional(string)
+            interval          = optional(string)
             status_code_range = optional(string)
-            path = optional(string)
-            sub_status = optional(string)
+            path              = optional(string)
+            sub_status        = optional(string)
             win32_status_code = optional(string)
           })))
         }))
