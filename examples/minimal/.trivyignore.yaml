@@ -1,0 +1,16 @@
+misconfigurations:
+  - id: AVD-AZU-0003
+    statement: >-
+      App authentication (Easy Auth) is app-specific and cannot be a module default: plenty of
+      web apps are intentionally public or authenticate in application code. The module exposes
+      the full auth_settings and auth_settings_v2 trees so callers that want platform auth can
+      enable it; leaving it off by default is a deliberate choice, not an oversight.
+  - id: AVD-AZU-0001
+    statement: >-
+      Client certificate (mutual TLS) enforcement is app-specific: it breaks ordinary browser
+      and API clients, so it cannot be a sensible default. The module exposes
+      client_certificate_enabled/mode for apps that need it.
+  - id: AVD-AZU-0005
+    statement: >-
+      HTTP/2 is a per-app performance choice, not a security control, and defaulting it on can
+      surprise clients. The module exposes site_config.http2_enabled for callers that want it.
